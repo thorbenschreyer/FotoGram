@@ -42,7 +42,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  position: relative;
+  position: sticky;
 
   bottom: 0px;
   width: 100%;
@@ -69,7 +69,7 @@ body {
   flex-direction: column;
   width: 100%;
 }
-.photo-album-section p {
+.photo-album-section-p {
   padding-top: 104px;
   padding-bottom: 128px;
   color: rgb(255, 255, 255, 1);
@@ -109,17 +109,21 @@ body {
 
 /* ===================== Dialog ===================== */
 
-.test {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .dialog-wrapper {
   width: 560px;
 }
 
-.dialog {
+dialog {
+  background-color: unset;
+  border: unset;
+  margin: auto;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);;
+}
+
+.dialog-style {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,10 +137,29 @@ body {
 .dialog-haeder {
   display: flex;
   justify-content: space-between;
-
-  padding-top: 80px;
+  align-items: center;
+  padding-top: 72px;
   padding-bottom: 60px;
   color: white;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(9, 33, 42, 1);
+  border: none;
+  border-radius: 100px;
+}
+
+.close-btn:hover {
+  background-color: rgba(18, 70, 88, 1); 
+}
+
+.close-btn:active {
+  background-color: rgba(13, 50, 64, 1); 
 }
 
 .dialog-section img {
@@ -152,13 +175,13 @@ body {
   align-items: center;
 }
 
-.dialog-footer p {
+.img-number {
   padding-left: 56px;
   padding-right: 56px;
   color: white;
 }
 
-.dialog-button {
+.dialog-forward-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,4 +190,9 @@ body {
   background-color: rgba(253, 91, 79, 0.1);
   border: none;
   border-radius: 100px;
+}
+
+.dialog-forward-button:hover {
+  background-color: rgba(253, 91, 79, 0.2);
+  
 }
