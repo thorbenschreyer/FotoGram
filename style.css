@@ -19,13 +19,11 @@ body {
 
 /* ===================== header-area ===================== */
 
-header {
+.main-header {
   display: flex;
   align-items: center;
-
   height: 80px;
   background-color: rgba(9, 33, 42, 1);
-
   box-shadow: 0px 0px 1px rgba(10, 249, 137, 0.02),
     0px 2px 4px rgba(10, 249, 137, 0.03), 0px 4px 9px rgba(10, 249, 137, 0.05),
     0px 6px 15px rgba(10, 249, 137, 0.06),
@@ -33,13 +31,13 @@ header {
 }
 
 .header-img {
-  width: 100%;
   padding-left: 16px;
+  width: 100%;
 }
 
 /* ===================== footer-area ===================== */
 
-footer {
+.main-footer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -47,22 +45,19 @@ footer {
   position: relative;
 
   bottom: 0px;
-  border-top-left-radius: 75%;
-  border-top-right-radius: 75%;
-
   width: 100%;
   height: 128px;
+  color: rgba(255, 255, 255, 1);
   background-color: rgba(9, 33, 42, 1);
-
+  border-top-left-radius: 75%;
+  border-top-right-radius: 75%;
   box-shadow: 0px -0px 1px rgba(10, 249, 137, 0.02),
     0px -2px 4px rgba(10, 249, 137, 0.03), 0px -4px 9px rgba(10, 249, 137, 0.05),
     0px -6px 15px rgba(10, 249, 137, 0.06),
     0px -10px 24px rgba(10, 249, 137, 0.08);
-
-  color: rgba(255, 255, 255, 1);
 }
 
-footer p {
+.main-footer p {
   padding: 16px;
 }
 
@@ -75,19 +70,19 @@ footer p {
   width: 100%;
 }
 .photo-album-section p {
-  color: rgb(255, 255, 255, 1);
   padding-top: 104px;
   padding-bottom: 128px;
+  color: rgb(255, 255, 255, 1);
   font-size: 56px;
   font-weight: 800;
 }
 
 .thumbnail-section {
-  max-width: 1440px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
+  max-width: 1440px;
   padding-bottom: 240px;
 }
 
@@ -102,7 +97,6 @@ footer p {
 
 .thumbnail-img img:hover {
   border-color: rgba(107, 193, 225);
-
   box-shadow: 0px 0px 1px rgba(107, 193, 255, 0.01),
     0px 0px 2px rgba(107, 193, 255, 0.02), 0px 0px 5px rgba(107, 193, 255, 0.03),
     0px 0px 10px rgba(107, 193, 255, 0.04),
@@ -111,4 +105,66 @@ footer p {
     0px 0px 30px rgba(107, 193, 255, 0.06),
     0px 0px 39px rgba(107, 193, 255, 0.07),
     0px 0px 49px rgba(107, 193, 255, 0.08);
+}
+
+/* ===================== Dialog ===================== */
+
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-wrapper {
+  width: 560px;
+}
+
+.dialog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 672px;
+  width: 688px;
+  border-radius: 40px;
+  background-color: rgba(9, 33, 42, 1);
+}
+
+.dialog-haeder {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 80px;
+  padding-bottom: 60px;
+  color: white;
+}
+
+.dialog-section img {
+  padding-bottom: 40px;
+  height: 365px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-footer p {
+  padding-left: 56px;
+  padding-right: 56px;
+  color: white;
+}
+
+.dialog-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(253, 91, 79, 0.1);
+  border: none;
+  border-radius: 100px;
 }
