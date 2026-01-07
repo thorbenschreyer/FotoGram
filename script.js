@@ -15,6 +15,20 @@ let contentDialog = document.getElementById("image-present-dialog")
     "./img/photo_album/img_12.jpg",
 ];
 
+function load() {
+    let thumbnailContainer = document.getElementById("thumbnail-section")
+
+arrayImages.forEach((src, index) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `Thumbnail ${index + 1}`;
+    img.classList.add("thumbnail-img");
+
+    thumbnailContainer.appendChild(img);
+});
+}
+
+
 function openDialog () {
     let contentDialog = document.getElementById("image-present-dialog")
     contentDialog.showModal()
