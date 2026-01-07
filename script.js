@@ -1,5 +1,6 @@
 let contentDialog = document.getElementById("image-present-dialog")
 
+
     let arrayImages = [
     "./img/photo_album/img_1.jpg",
     "./img/photo_album/img_2.jpg",
@@ -15,6 +16,34 @@ let contentDialog = document.getElementById("image-present-dialog")
     "./img/photo_album/img_12.jpg",
 ];
 
+// Lädt und entfernt das Image
+function openImageInDialog (index) {
+    let imgContainer = document.getElementById("dialog-section")
+    let src = arrayImages[index]
+    const img = document.createElement("img")
+    img.src = src
+    img.alt = `Thumbnail ${index + 1}`
+    img.id = `container-img`;
+    let image = document.getElementById("dialog-section")
+    image.src = arrayImages[index];
+    imgContainer.appendChild(img)
+    ImageNumber = index + 1;
+}
+
+function closeImageInDialog () {
+    let img = document.getElementById("container-img");
+    console.log(img)
+    img.remove(img);
+}
+
+
+function imgNumberInDialog(array) {
+  const el = document.getElementById("img-number");
+  el.innerHTML = `${ImageNumber} / ${array.length}`;
+}
+
+// Lädt die Bilder auf der Seite
+
 function load() {
     let thumbnailContainer = document.getElementById("thumbnail-section")
 
@@ -23,30 +52,32 @@ arrayImages.forEach((src, index) => {
     img.src = src;
     img.alt = `Thumbnail ${index + 1}`;
     img.classList.add("thumbnail-img");
-
+    img.id = `image-${index}`
+    img.addEventListener("click", () => {
+    openDialog(index);
+    });
     thumbnailContainer.appendChild(img);
 });
 }
 
-
-function openDialog () {
+// Öffnet und schliesst den Dialog
+function openDialog (index) {
     let contentDialog = document.getElementById("image-present-dialog")
     contentDialog.showModal()
-    imgNumberInDialog(arrayImages)
+    openImageInDialog (index)
+    imgNumberInDialog(arrayImages) 
 }
 
 function closeDialog () {
     let contentDialog = document.getElementById("image-present-dialog")
     contentDialog.close()
+    closeImageInDialog()
 }
 
+function nextImg () {
 
-function imgNumberInDialog(array) {
-  const el = document.getElementById("img-number");
-  el.innerHTML = `1 / ${array.length}`;
 }
 
-function imgNumberInDialog(array) {
-    let neww = document.getElementById("img-number")
-    neww.innerHTML = `<p class="img-number" id="img-number"> 1 / ${array.length}</p>`
+function lastImg () {
+    
 }
