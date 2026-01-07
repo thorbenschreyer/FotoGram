@@ -16,7 +16,6 @@ let contentDialog = document.getElementById("image-present-dialog")
 ];
 
 // Lädt die Bilder auf der Seite
-
 function load() {
     let thumbnailContainer = document.getElementById("thumbnail-section")
 
@@ -33,7 +32,7 @@ arrayImages.forEach((src, index) => {
 });
 }
 
-// Öffnet und schliesst den Dialog
+// Öffnet den Dialog
 function openDialog (index) {
     let contentDialog = document.getElementById("image-present-dialog")
     contentDialog.showModal()
@@ -42,15 +41,15 @@ function openDialog (index) {
     imgNumberInDialog(arrayImages, numberOfImage)
 }
 
+// Schliesst den Dialog
 function closeDialog () {
     let contentDialog = document.getElementById("image-present-dialog")
     contentDialog.close()
     closeImageInDialog()
 }
 
-let actualNumberOfIndex;
-
 // Lädt und entfernt das Image im Dialog
+let actualNumberOfIndex;
 function openImageInDialog (index) {
     let imgContainer = document.getElementById("dialog-section")
     let src = arrayImages[index]
@@ -69,20 +68,40 @@ function closeImageInDialog () {
     img.remove(img);
 }
 
-
+// Definiert den Bildnamen und bildnummer von maximaler Anzahl
 function imgNumberInDialog(array, index) {
   const el = document.getElementById("img-number");
   el.innerHTML = `${index+1} / ${array.length}`;
+
+  const imageName = document.getElementById("image-name")
+  imageName.innerText = `Image ${index + 1}`
 }
 
+// Nächstes Bild
 function nextImg() {
     closeImageInDialog();
     actualNumberOfIndex += 1
-    openImageInDialog(actualNumberOfIndex)
+    if (actualNumberOfIndex > arrayImages.length - 1) {
+        actualNumberOfIndex = 0
+        openImageInDialog(actualNumberOfIndex)
+    } else {
+        openImageInDialog(actualNumberOfIndex)
+    }
+
+
+    
+
+    
 }
 
+// Vorheriges Bild
 function lastImg() {
     closeImageInDialog();
     actualNumberOfIndex -= 1
-    openImageInDialog(actualNumberOfIndex)
+    if (actualNumberOfIndex == -1 ) {
+      actualNumberOfIndex = arrayImages.length - 1
+       openImageInDialog(actualNumberOfIndex)
+    } else {
+      openImageInDialog(actualNumberOfIndex)
+    }
 }
