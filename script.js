@@ -20,15 +20,15 @@ function load() {
     let thumbnailContainer = document.getElementById("thumbnail-section")
 
 arrayImages.forEach((src, index) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `Thumbnail ${index + 1}`;
-    img.classList.add("thumbnail-img");
-    img.id = `image-${index}`
-    img.addEventListener("click", () => {
+    const IMG = document.createElement("img");
+    IMG.src = src;
+    IMG.alt = `Thumbnail ${index + 1}`;
+    IMG.classList.add("thumbnail-img");
+    IMG.id = `image-${index}`
+    IMG.addEventListener("click", () => {
     openDialog(index);
     });
-    thumbnailContainer.appendChild(img);
+    thumbnailContainer.appendChild(IMG);
 });
 }
 
@@ -77,11 +77,11 @@ function closeImageInDialog () {
 
 // Definiert den Bildnamen und bildnummer von maximaler Anzahl
 function imgNumberInDialog(array, index) {
-  const el = document.getElementById("img-number");
-  el.innerHTML = `${index+1} / ${array.length}`;
+  const ELEMENT = document.getElementById("img-number");
+  ELEMENT.innerHTML = `${index+1} / ${array.length}`;
 
-  const imageName = document.getElementById("image-name")
-  imageName.innerText = `Image ${index + 1}`
+  const IMAGE_NAME = document.getElementById("image-name")
+  IMAGE_NAME.innerText = `Image ${index + 1}`
 }
 
 // Nächstes Bild
