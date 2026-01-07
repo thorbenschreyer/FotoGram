@@ -48,7 +48,12 @@ function closeDialog() {
     closeImageInDialog()
 }
 
-
+const dialog = document.getElementById('image-present-dialog');
+dialog.addEventListener('click', (event) => {
+  if (event.target === dialog) {
+    closeDialog();
+  }
+});
 
 // Lädt und entfernt das Image im Dialog
 let actualNumberOfIndex;
@@ -113,3 +118,4 @@ document.addEventListener("keydown", function (event) {
         closeDialog();
     }
 });
+
