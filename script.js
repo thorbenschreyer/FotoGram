@@ -42,11 +42,13 @@ function openDialog (index) {
 }
 
 // Schliesst den Dialog
-function closeDialog () {
+function closeDialog() {
     let contentDialog = document.getElementById("image-present-dialog")
     contentDialog.close()
     closeImageInDialog()
 }
+
+
 
 // Lädt und entfernt das Image im Dialog
 let actualNumberOfIndex;
@@ -86,12 +88,7 @@ function nextImg() {
         openImageInDialog(actualNumberOfIndex)
     } else {
         openImageInDialog(actualNumberOfIndex)
-    }
-
-
-    
-
-    
+    }    
 }
 
 // Vorheriges Bild
@@ -105,3 +102,14 @@ function lastImg() {
       openImageInDialog(actualNumberOfIndex)
     }
 }
+
+// Testenfunktionen implementiert
+document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowLeft") {
+        lastImg();
+    } else if (event.key === "ArrowRight") {
+        nextImg();
+    } else if (event.key === "Escape") {
+        closeDialog();
+    }
+});

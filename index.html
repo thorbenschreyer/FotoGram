@@ -10,11 +10,11 @@
         rel="stylesheet">
     <link rel="icon" href="./img/favicon_fotogram.png" type="img/png">
     <link rel="stylesheet" href="style.css">
-    
+
     <title>Fotogram</title>
 </head>
 
-<body  onload="load()">
+<body onload="load()">
     <header class="main-header">
         <div class="header-img wrapper">
             <img src="./img/fotogram_logo.png" alt="Logo von Fotogram">
@@ -26,21 +26,21 @@
         <p class="photo-album-section-p">Your personal photo album</p>
 
         <div class="thumbnail-section" id="thumbnail-section">
-             
-        
-            
-        </div>
+
+
+
+        </div class="overlay">
         <dialog id="image-present-dialog">
             <div class="dialog-style">
                 <div class="dialog-wrapper">
                     <header class="dialog-haeder">
-                        <h2 id="image-name" >Image Name</h2>
+                        <h2 id="image-name">Image Name</h2>
                         <button onclick="closeDialog()" class="close-btn"><img src="./img/close_icon.png"
                                 alt="Icon zum Schließen des Dialogs"></button>
                     </header>
 
                     <section class="dialog-section" id="dialog-section">
-                        
+
                     </section>
 
                     <footer class="dialog-footer">
@@ -64,4 +64,5 @@
 
 </body>
 <script src="script.js"></script>
+
 </html>
