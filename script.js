@@ -48,15 +48,19 @@ function closeDialog () {
     closeImageInDialog()
 }
 
+let actualNumberOfIndex;
+
 // Lädt und entfernt das Image im Dialog
 function openImageInDialog (index) {
     let imgContainer = document.getElementById("dialog-section")
     let src = arrayImages[index]
+    actualNumberOfIndex = index;
     const img = document.createElement("img")
     img.src = src
     img.alt = `Thumbnail ${index + 1}`
     img.id = `container-img`;
     imgContainer.appendChild(img)
+    imgNumberInDialog(arrayImages, index)
 }
 
 function closeImageInDialog () {
@@ -68,5 +72,17 @@ function closeImageInDialog () {
 
 function imgNumberInDialog(array, index) {
   const el = document.getElementById("img-number");
-  el.innerHTML = `${index} / ${array.length}`;
+  el.innerHTML = `${index+1} / ${array.length}`;
+}
+
+function nextImg() {
+    closeImageInDialog();
+    actualNumberOfIndex += 1
+    openImageInDialog(actualNumberOfIndex)
+}
+
+function lastImg() {
+    closeImageInDialog();
+    actualNumberOfIndex -= 1
+    openImageInDialog(actualNumberOfIndex)
 }
