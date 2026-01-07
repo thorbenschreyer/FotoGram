@@ -10,6 +10,9 @@
 body {
   height: 100vh;
   background-color: rgba(6, 23, 30);
+  scrollbar-width: 2px;
+  scrollbar-color: white;
+  
 }
 
 .wrapper {
@@ -68,7 +71,7 @@ body {
   flex-direction: column;
   width: 100%;
 }
-.photo-album-section-p {
+.photo-album-section-h1 {
   padding-top: 104px;
   padding-bottom: 128px;
   color: rgb(255, 255, 255, 1);
@@ -195,3 +198,33 @@ dialog::backdrop {
   background-color: rgba(253, 91, 79, 0.2);
   
 }
+
+@media (max-width: 750px) {
+  .photo-album-section-h1 {
+    text-align: center;
+    font-size: 48px;
+}
+
+.header-img {
+  text-align: center;
+  padding-left: 16px;
+  width: 100%;
+}
+
+.dialog-style {
+  width: 346px;
+  border-radius: 40px;
+}
+
+.dialog-wrapper {
+  width: 320px;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+}
+
