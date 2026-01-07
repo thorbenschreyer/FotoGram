@@ -25,6 +25,8 @@ arrayImages.forEach((src, index) => {
     IMG.alt = `Thumbnail ${index + 1}`;
     IMG.classList.add("thumbnail-img");
     IMG.id = `image-${index}`
+    IMG.ariaHasPopup = "dialog";
+    IMG.tabIndex = 0;   
     IMG.addEventListener("click", () => {
     openDialog(index);
     });

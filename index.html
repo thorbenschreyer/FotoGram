@@ -26,12 +26,12 @@
         <p class="photo-album-section-p">Your personal photo album</p>
 
         <div class="thumbnail-section" id="thumbnail-section">
-            <dialog id="image-present-dialog">
+            <dialog id="image-present-dialog" aria-labelledby="image-name">
                 <div class="dialog-style">
                     <div class="dialog-wrapper">
                         <header class="dialog-haeder">
                             <h2 id="image-name">Image Name</h2>
-                            <button onclick="closeDialog()" class="close-btn"><img src="./img/close_icon.png"
+                            <button aria-label="Schließen" onclick="closeDialog()" class="close-btn"><img src="./img/close_icon.png"
                                     alt="Icon zum Schließen des Dialogs"></button>
                         </header>
 
@@ -40,10 +40,10 @@
                         </section>
 
                         <footer class="dialog-footer">
-                            <button onclick="lastImg()" class="dialog-forward-button"><img src="./img/arrow_left.png"
+                            <button aria-label="Vorheriges Bild" onclick="lastImg()" class="dialog-forward-button"><img src="./img/arrow_left.png"
                                     alt="Nach link/kleiner bewegen"></button>
                             <p class="img-number" id="img-number"> 1 / 2</p>
-                            <button onclick="nextImg()" class="dialog-forward-button"><img src="./img/aarrow_right.png"
+                            <button aria-label="Nächstes Bild" onclick="nextImg()" class="dialog-forward-button"><img src="./img/aarrow_right.png"
                                     alt="Nach rechts/größer bewegen"></button>
                         </footer>
                     </div>
