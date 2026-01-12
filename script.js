@@ -73,7 +73,6 @@ function openImageInDialog(index) {
 
 function closeImageInDialog() {
   let img = document.getElementById("container-img");
-  console.log(img);
   img.remove(img);
 }
 
