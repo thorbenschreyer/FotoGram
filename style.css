@@ -88,6 +88,7 @@ body {
   height: 150px;
   border-radius: 16px;
   border: 2px solid rgba(18, 70, 88, 1);
+  cursor: pointer;
 }
 
 .thumbnail-btn {
@@ -153,6 +154,7 @@ dialog::backdrop {
   background-color: rgba(9, 33, 42, 1);
   border: none;
   border-radius: 100px;
+  cursor: pointer;
 }
 
 .close-btn:hover {
@@ -165,6 +167,7 @@ dialog::backdrop {
 
 .dialog-section img {
   padding-bottom: 40px;
+  padding-top: 40px;
   height: 365px;
   width: 100%;
   object-fit: cover;
@@ -191,6 +194,7 @@ dialog::backdrop {
   background-color: rgba(253, 91, 79, 0.1);
   border: none;
   border-radius: 100px;
+  cursor: pointer;
 }
 
 .dialog-forward-button:hover {
