@@ -22,16 +22,7 @@ function load() {
   let thumbnailContainer = document.getElementById("thumbnail-section");
 
 arrayImages.forEach((src, index) => {
-    thumbnailContainer.innerHTML += `   <button 
-                                            onclick="openDialog(${index})"
-                                            class="thumbnail-btn">
-                                        <img 
-                                            id="image-${index}" 
-                                            class="thumbnail-img" 
-                                            src=${src}   
-                                            alt="Thumbnail ${index + 1}" 
-                                            id="image1">
-                                        </button>`;
+    thumbnailContainer.innerHTML += generateImg(src, index)
   });  
 }
 
@@ -51,7 +42,7 @@ function closeDialog() {
   closeImageInDialog();
 }
 
-const dialog = document.getElementById("image-present-dialog");
+let dialog = document.getElementById("image-present-dialog");
 dialog.addEventListener("click", (event) => {
   if (event.target === dialog) {
     closeDialog();
@@ -119,3 +110,11 @@ document.addEventListener("keydown", function (event) {
     closeDialog();
   }
 });
+
+//Templatefunctions
+// Generate image
+
+function generateImg (src, index) {
+  return `<button onclick="openDialog(${index})" class="thumbnail-btn"> <img id="image-${index}" class="thumbnail-img" src=${src} alt="Thumbnail ${index + 1}" id="image1"></button>`;
+
+}
