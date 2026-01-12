@@ -21,9 +21,9 @@ let arrayImages = [
 function load() {
   let thumbnailContainer = document.getElementById("thumbnail-section");
 
-arrayImages.forEach((src, index) => {
-    thumbnailContainer.innerHTML += generateImg(src, index)
-  });  
+  arrayImages.forEach((src, index) => {
+    thumbnailContainer.innerHTML += generateImg(src, index);
+  });
 }
 
 // Open dialog
@@ -51,15 +51,12 @@ dialog.addEventListener("click", (event) => {
 
 // load and remove image in dialog
 function openImageInDialog(index) {
-  let imgContainer = document.getElementById("dialog-section");
   let src = arrayImages[index];
   actualNumberOfIndex = index;
-  const img = document.createElement("img");
-  img.src = src;
-  img.alt = `Thumbnail ${index + 1}`;
-  img.id = `container-img`;
-  imgContainer.appendChild(img);
   imgNumberInDialog(arrayImages, index);
+
+  let imgContainer = document.getElementById("dialog-section");
+  imgContainer.innerHTML = imageForDialog (src, index)
 }
 
 function closeImageInDialog() {
@@ -114,7 +111,12 @@ document.addEventListener("keydown", function (event) {
 //Templatefunctions
 // Generate image
 
-function generateImg (src, index) {
-  return `<button onclick="openDialog(${index})" class="thumbnail-btn"> <img id="image-${index}" class="thumbnail-img" src=${src} alt="Thumbnail ${index + 1}" id="image1"></button>`;
+function generateImg(src, index) {
+  return `<button onclick="openDialog(${index})" class="thumbnail-btn"> <img id="image-${index}" class="thumbnail-img" src=${src} alt="Thumbnail ${
+    index + 1
+  }" id="image1"></button>`;
+}
 
+function imageForDialog (src, index) {
+  return `<img src="${src}" alt="Thumbnail ${index + 1}" id="container-img"></img>`
 }
