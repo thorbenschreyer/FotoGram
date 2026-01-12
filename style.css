@@ -253,5 +253,13 @@ dialog::backdrop {
   .img-number {
     padding-left: 32px;
     padding-right: 32px;
-}
+  }
+
+  .dialog-haeder {
+    padding-top: 16px;
+  }
+
+  .dialog-style {
+    height: 576px;
+  }
 }

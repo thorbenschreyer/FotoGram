@@ -28,7 +28,7 @@ arrayImages.forEach((src, index) => {
 
 // Open dialog
 function openDialog(index) {
-  let contentDialog = document.getElementById("image-present-dialog");
+  let contentDialog = document.getElementById("dialog");
   contentDialog.showModal();
   openImageInDialog(index);
   let numberOfImage = index;
@@ -37,14 +37,27 @@ function openDialog(index) {
 
 // Close dialog
 function closeDialog() {
-  let contentDialog = document.getElementById("image-present-dialog");
+  let contentDialog = document.getElementById("dialog");
   contentDialog.close();
   closeImageInDialog();
 }
 
-let dialog = document.getElementById("image-present-dialog");
+let dialog = document.getElementById("dialog");
+
 dialog.addEventListener("click", (event) => {
-  if (event.target === dialog) {
+  // Wir holen uns die Position und Größe der weißen Box (das Sichtbare)
+  const rect = dialog.getBoundingClientRect();
+  
+  // Wir prüfen, ob der Klick außerhalb dieser Box liegt
+  const isInDialog = (
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom
+  );
+
+  // Wenn der Klick NICHT in der Box war, schließen wir den Dialog
+  if (!isInDialog) {
     closeDialog();
   }
 });
