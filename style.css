@@ -228,3 +228,30 @@ dialog::backdrop {
     justify-content: space-between;
   }
 }
+
+@media (max-width: 375px) {
+  .photo-album-section-h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .dialog-style {
+    width: 280px;
+    border-radius: 40px;
+  }
+
+  .dialog-wrapper {
+    width: 260px;
+  }
+
+  .close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .img-number {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+}
