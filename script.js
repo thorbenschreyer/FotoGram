@@ -56,7 +56,7 @@ function openImageInDialog(index) {
   imgNumberInDialog(arrayImages, index);
 
   let imgContainer = document.getElementById("dialog-section");
-  imgContainer.innerHTML = imageForDialog (src, index)
+  imgContainer.innerHTML = imageForDialog(src, index);
 }
 
 function closeImageInDialog() {
@@ -117,6 +117,8 @@ function generateImg(src, index) {
   }" id="image1"></button>`;
 }
 
-function imageForDialog (src, index) {
-  return `<img src="${src}" alt="Thumbnail ${index + 1}" id="container-img"></img>`
+function imageForDialog(src, index) {
+  return `<img src="${src}" alt="Thumbnail ${
+    index + 1
+  }" id="container-img"></img>`;
 }
