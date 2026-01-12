@@ -21,23 +21,18 @@ let arrayImages = [
 function load() {
   let thumbnailContainer = document.getElementById("thumbnail-section");
 
-  arrayImages.forEach((src, index) => {
-    const IMG = document.createElement("img");
-    IMG.src = src;
-    IMG.alt = `Thumbnail ${index + 1}`;
-    IMG.classList.add("thumbnail-img");
-    IMG.id = `image-${index}`;
-    IMG.ariaHasPopup = "dialog";
-    IMG.tabIndex = 0;
-    IMG.addEventListener("click", () => {
-      openDialog(index);
-    });
-    IMG.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") 
-        openDialog(index);
-    });
-    thumbnailContainer.appendChild(IMG);
-  });
+arrayImages.forEach((src, index) => {
+    thumbnailContainer.innerHTML += `   <button 
+                                            onclick="openDialog(${index})"
+                                            class="thumbnail-btn">
+                                        <img 
+                                            id="image-${index}" 
+                                            class="thumbnail-img" 
+                                            src=${src}   
+                                            alt="Thumbnail ${index + 1}" 
+                                            id="image1">
+                                        </button>`;
+  });  
 }
 
 // Open dialog
