@@ -43,21 +43,8 @@ function closeDialog() {
 }
 
 let dialog = document.getElementById("dialog");
-
 dialog.addEventListener("click", (event) => {
-  // Wir holen uns die Position und Größe der weißen Box (das Sichtbare)
-  const rect = dialog.getBoundingClientRect();
-  
-  // Wir prüfen, ob der Klick außerhalb dieser Box liegt
-  const isInDialog = (
-    event.clientX >= rect.left &&
-    event.clientX <= rect.right &&
-    event.clientY >= rect.top &&
-    event.clientY <= rect.bottom
-  );
-
-  // Wenn der Klick NICHT in der Box war, schließen wir den Dialog
-  if (!isInDialog) {
+  if (event.target === dialog) {
     closeDialog();
   }
 });
