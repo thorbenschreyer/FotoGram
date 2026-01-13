@@ -74,29 +74,24 @@ function imgNumberInDialog(array, index) {
   IMAGE_NAME.innerText = `Image ${index + 1}`;
 }
 
-// Next img
-function nextImg() {
+function changeImg(index) {
   closeImageInDialog();
-  actualNumberOfIndex += 1;
+  if (index == 1) {
+    actualNumberOfIndex += 1;
+  } else if (index == 2) {
+    actualNumberOfIndex -= 1;
+  }
+
   if (actualNumberOfIndex > arrayImages.length - 1) {
     actualNumberOfIndex = 0;
-    openImageInDialog(actualNumberOfIndex);
-  } else {
-    openImageInDialog(actualNumberOfIndex);
-  }
-}
-
-// last img
-function lastImg() {
-  closeImageInDialog();
-  actualNumberOfIndex -= 1;
-  if (actualNumberOfIndex == -1) {
+    openImageInDialog(actualNumberOfIndex); }
+  else if (actualNumberOfIndex == -1) {
     actualNumberOfIndex = arrayImages.length - 1;
     openImageInDialog(actualNumberOfIndex);
   } else {
     openImageInDialog(actualNumberOfIndex);
-  }
-}
+  }} 
+
 
 // Keyboadfunctions
 document.addEventListener("keydown", function (event) {
