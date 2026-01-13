@@ -49,6 +49,7 @@ dialog.addEventListener("click", (event) => {
   }
 });
 
+
 // load and remove image in dialog
 function openImageInDialog(index) {
   let src = arrayImages[index];
@@ -107,6 +108,9 @@ document.addEventListener("keydown", function (event) {
     closeDialog();
   }
 });
+
+
+
 
 //Templatefunctions
 // Generate image

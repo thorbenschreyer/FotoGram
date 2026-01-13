@@ -79,7 +79,7 @@ body {
   flex-wrap: wrap;
   gap: 40px;
   max-width: 1440px;
-  padding-bottom: 240px;
+  padding: 0px 16px;
 }
 
 .thumbnail-img {
